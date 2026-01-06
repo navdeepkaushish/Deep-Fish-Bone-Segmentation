@@ -21,7 +21,7 @@ Zebrafish images are processed through a multi-stage deep learning pipeline:
 ### Lateral View
 - Single segmentation model that predicts a **combined bone mask** from the lateral view
 
-<p align="center"> <img src="Test_images/dataset_sample.png" width="700"><br> <em>Figure 1: Dataset Sample and Annotations</em> </p> <br>
+<p align="center"> <img src="data/sample_anno/dataset_sample.png" width="700"><br> <em>Figure 1: Dataset Sample and Annotations</em> </p> <br>
 
 
 ---
@@ -40,7 +40,7 @@ Zebrafish images are processed through a multi-stage deep learning pipeline:
 ## Repository Structure
 
 ```text
-fish-segmentation/
+Deep-Fish-Bone-Segmentation/
 │
 ├── app.py                  # CLI entry point (offline inference)
 ├── serve.py                # FastAPI service (online inference)
@@ -59,19 +59,21 @@ fish-segmentation/
 │       └── bone_seg.pt
 │
 ├── models/
-│   └── unet.py
+│   |── unet.py
 │
 ├── utils/
 │   ├── preprocessing.py
 │   ├── postprocessing.py
-│   └── geometry.py
+│  
 │
 ├── ventral/
-│   └── inference.py
-│
+│   |-- inference.py
+│   |-- pipeline.py
+|
 ├── lateral/
-│   └── inference.py
-│
+│   |-- inference.py
+│   |-- pipeline.py
+|
 ├── data/                   # Runtime input (gitignored)
 ├── outputs/                # Runtime outputs (gitignored)
 ├── mlruns/                 # MLflow logs (gitignored)
