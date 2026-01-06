@@ -1,0 +1,3 @@
+{
+    "python.pythonPath": "${workspaceFolder}/fish-bone/bin/python"
+}

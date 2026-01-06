@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+
+# Local data & artifacts
+data/
+outputs/
+mlruns/
+.DS_Store
+.vscode/
+checkpoints/
+
+# Environment
+.env
+venv/
+
+# OS
+# (macOS .DS_Store already listed above)
