@@ -20,7 +20,7 @@ class VentralPipeline:
         self.N = 13
         # full head segmentation
         self.full_model = f_UNet(3, 1)
-        ckpt = torch.load("checkpoints/ventral/full_seg.pt", map_location=device)
+        ckpt = torch.load("checkpoints/v_full_seg.pt", map_location=device)
         pretrained_dict = ckpt['state_dict']
         #pretrained_dict = {key.replace("module.", ""): value for key, value in pretrained_dict.items()} #for distributed model loading
         self.full_model.load_state_dict(pretrained_dict)
@@ -28,7 +28,7 @@ class VentralPipeline:
 
         # bone segmentation (13 masks)
         self.bone_model = UNet(3, self.N)
-        ckpt = torch.load("checkpoints/ventral/bone_seg.pt", map_location=device)
+        ckpt = torch.load("checkpoints/v_bone_seg.pt", map_location=device)
         pretrained_dict = ckpt['state_dict']
         #pretrained_dict = {key.replace("module.", ""): value for key, value in pretrained_dict.items()} #for distributed model loading
         self.bone_model.load_state_dict(pretrained_dict)
