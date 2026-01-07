@@ -20,9 +20,10 @@ Zebrafish images are processed through a multi-stage deep learning pipeline:
 
 ### Lateral View
 - Single segmentation model that predicts a **combined bone mask** from the lateral view
-  
-<p align="center"> <img src="data/sample_anno/dataset_sample.png" width="700"><br> <em>Figure 1: Dataset Sample and Annotations (a) Lateral and (b) Ventral view</em> </p> <br>
 
+---
+
+<p align="center"> <img src="data/sample_anno/dataset_sample.png" width="700"><br> <em>Figure 1: Dataset Sample and Annotations (a) Lateral and (b) Ventral view</em> </p> <br>
 
 ---
 
