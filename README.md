@@ -1,7 +1,7 @@
 # Zebrafish Bone Structure Segmentation  
 **Ventral & Lateral Views | Production-Ready Deep Learning Pipeline**
 
-This repository contains a **production-ready computer vision pipeline** for zebrafish head and bone structure segmentation using **U-Net architectures** implemented in **PyTorch**.  
+This repository contains a **production-ready computer vision pipeline** for zebrafish larvae head and bone structure segmentation using **U-Net architectures** implemented in **PyTorch**.  
 The system supports **both ventral and lateral views**, **CPU/GPU inference**, **CLI and API usage**, and is fully **Dockerized with CI/CD support**.
 
 ---
@@ -11,12 +11,12 @@ The system supports **both ventral and lateral views**, **CPU/GPU inference**, *
 Zebrafish images are processed through a multi-stage deep learning pipeline:
 
 ### Ventral View
-- **Full Head Segmentation**  
-   - Binary segmentation to isolate the zebrafish head from the background
+- **Full Body Segmentation**  
+   - Binary segmentation to isolate the zebrafish larvae from the background
 - **Head Cropping**  
-   - Bounding box extraction from the head mask
+   - Bounding box extraction from full body mask
 - **Bone Structure Segmentation**  
-   - Multi-mask segmentation of internal developing bone structures
+   - Multi-mask segmentation of internal developing bone structures from vertebra (lateral view) and head (ventral view)
 
 ### Lateral View
 - Single segmentation model that predicts a **combined bone mask** from the lateral view
@@ -179,8 +179,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 - GPU is used if available
 - CPU fallback otherwise
-- Same Docker image works everywhere
-
+- 
 ---
 
 ## CI/CD
@@ -193,7 +192,6 @@ Workflow file:
 ```text
 .github/workflows/ci.yml
 ```
-
 ---
 
 ## Tech Stack
