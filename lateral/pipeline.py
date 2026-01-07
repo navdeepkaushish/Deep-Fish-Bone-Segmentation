@@ -18,7 +18,7 @@ class LateralPipeline:
         self.threshold = 0.45
 
         self.model = UNet(3, 1)
-        ckpt = torch.load("checkpoints/lateral/bone_seg.pt", map_location=device)
+        ckpt = torch.load("checkpoints/l_bone_seg.pt", map_location=device)
         pretrained_dict = ckpt['state_dict']
         pretrained_dict = {key.replace("module.", ""): value for key, value in pretrained_dict.items()} #for distributed model loading
         self.model.load_state_dict(pretrained_dict)
