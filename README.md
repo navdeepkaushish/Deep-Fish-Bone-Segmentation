@@ -1,7 +1,7 @@
 # Zebrafish Bone Structure Segmentation  
 **Ventral & Lateral Views | Production-Ready Deep Learning Pipeline**
 
-This repository contains a **production-ready computer vision pipeline** for zebrafish larvae head and bone structure segmentation using **U-Net architectures** implemented in **PyTorch**.  
+This repository contains a **production-ready computer vision pipeline** for zebrafish larvae full body and developing bone structure (from head and vertebral coloumn) segmentation using **U-Net architectures** implemented in **PyTorch**.  
 The system supports **both ventral and lateral views**, **CPU/GPU inference**, **CLI and API usage**, and is fully **Dockerized with CI/CD support**.
 
 ---
