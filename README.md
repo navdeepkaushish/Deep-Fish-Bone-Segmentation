@@ -11,17 +11,17 @@ The system supports **both ventral and lateral views**, **CPU/GPU inference**, *
 Zebrafish images are processed through a multi-stage deep learning pipeline:
 
 ### Ventral View
-1. **Full Head Segmentation**  
+- **Full Head Segmentation**  
    - Binary segmentation to isolate the zebrafish head from the background
-2. **Head Cropping**  
+- **Head Cropping**  
    - Bounding box extraction from the head mask
-3. **Bone Structure Segmentation**  
+- **Bone Structure Segmentation**  
    - Multi-mask segmentation of internal developing bone structures
 
 ### Lateral View
 - Single segmentation model that predicts a **combined bone mask** from the lateral view
-
-<p align="center"> <img src="data/sample_anno/dataset_sample.png" width="700"><br> <em>Figure 1: Dataset Sample and Annotations</em> </p> <br>
+  
+<p align="center"> <img src="data/sample_anno/dataset_sample.png" width="700"><br> <em>Figure 1: Dataset Sample and Annotations (a) Lateral and (b) Ventral view</em> </p> <br>
 
 
 ---
