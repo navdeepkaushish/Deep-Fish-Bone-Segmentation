@@ -49,17 +49,17 @@ Deep-Fish-Bone-Segmentation/
 ├── README.md
 ├── .dockerignore
 │
-├── examples/               # Small demo images (committed)
+├── examples/              
 │
-├── checkpoints/
-│   ├── ventral/
-│   │   ├── full_seg.pt
-│   │   └── bone_seg.pt
-│   └── lateral/
-│       └── bone_seg.pt
+├── checkpoints/     # Downloaded at runtime or build time (for docker build)
+│   |-- v_full_seg.pt
+│   │-- v_bone_seg.pt
+│   |-- l_bone_seg
+│     
 │
 ├── models/
 │   |── unet.py
+|   |-- download_models.py
 │
 ├── utils/
 │   ├── preprocessing.py
@@ -149,7 +149,7 @@ Available endpoints:
 ### Build Docker Image
 
 ```bash
-docker build -t fish-seg .
+docker build -t deep-fish-bone-segmentation .
 ```
 
 ### Run API (GPU if available)
@@ -204,6 +204,7 @@ Workflow file:
 - **Docker**
 - **MLflow**
 - **GitHub Actions**
+- **Hugging Face**
 
 ---
 
@@ -217,6 +218,6 @@ Apache 2.0.
 ## Author
 
 **Navdeep Kumar**  
-PhD in computer Science specializes in compter vision and deep learning 
+PhD in computer Science, specializes in compter vision and deep learning 
 Focus: Computer Vision, Deep Learning, Production ML Systems
 
