@@ -4,9 +4,9 @@ from huggingface_hub import hf_hub_download
 os.makedirs("checkpoints", exist_ok=True)
 
 models = {
-    "v_bone_seg.pt": "your-username/fish-bone-segmentation-models",
-    "l_bone_seg.pt": "your-username/fish-bone-segmentation-models",
-    "v_full_seg.pt": "your-username/fish-bone-segmentation-models"
+    "v_bone_seg.pt": "navdeepkaushish/fish-bone-segmentation-models",
+    "l_bone_seg.pt": "navdeepkaushish/fish-bone-segmentation-models",
+    "v_full_seg.pt": "navdeepkaushish/fish-bone-segmentation-models"
 }
 
 for name, repo_id in models.items():
