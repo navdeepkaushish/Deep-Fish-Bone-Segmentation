@@ -8,7 +8,7 @@ on:
 
 env:
   PYTHON_VERSION: "3.10"
-  IMAGE_NAME: your-docker-image-name
+  IMAGE_NAME: deep-fish-bone-segmentation
 
 jobs:
   build-test-docker:
@@ -68,7 +68,7 @@ jobs:
         python models/download_models.py
 
     # -------------------------------------------------
-    # Run tests (optional but recommended)
+    # Run tests
     # -------------------------------------------------
     - name: Run tests
       run: |
