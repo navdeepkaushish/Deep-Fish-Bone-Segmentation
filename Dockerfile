@@ -38,6 +38,8 @@ RUN pip install --upgrade pip && \
 # - .github/ (harmless)
 # - etc.
 COPY . .
+#====== download models at buildtime ========
+RUN python models/download_models.py
 
 # -------------------------------
 # Expose API port
