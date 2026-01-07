@@ -156,13 +156,13 @@ docker build -t deep-fish-bone-segmentation .
 ### Run API (GPU if available)
 
 ```bash
-docker run --gpus all -p 8000:8000 fish-seg
+docker run --gpus all -p 8000:8000 deep-fish-bone-segmentation
 ```
 
 ### Run CLI in Docker
 
 ```bash
-docker run --gpus all fish-seg python app.py --view ventral
+docker run --gpus all deep-fish-bone-segmentation python app.py --view ventral
 ```
 
 CPU-only systems work automatically without `--gpus`.
