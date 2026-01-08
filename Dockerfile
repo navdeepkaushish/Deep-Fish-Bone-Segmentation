@@ -14,7 +14,16 @@ WORKDIR /app
 # -------------------------------
 # libgl1 is required for OpenCV
 RUN apt-get update && apt-get install -y \
-    libgl1 \
+    git \
+    curl \
+    wget \
+    build-essential \
+    libssl-dev \
+    libffi-dev \
+    libbz2-dev \
+    liblzma-dev \
+    libsqlite3-dev \
+    zlib1g-dev \
     && rm -rf /var/lib/apt/lists/*
 
 # -------------------------------
