@@ -2,36 +2,39 @@
 # Base image with Pytorch (cpu only)
 # -------------------------------
 #FROM pytorch/pytorch:2.1.0-cuda11.8-cudnn8-runtime # uncomment this while using CUDA built
-FROM python:3.10-slim
-# Prevent Python buffering issues
-ENV PYTHONUNBUFFERED=1
 
-# Set working directory inside container
-WORKDIR /app
+# Use an official Python image
+FROM python:3.11-slim
 
-# -------------------------------
-# System dependencies
-# -------------------------------
-# libgl1 is required for OpenCV
-RUN apt-get update && apt-get install -y \
+# Set environment variables to avoid Python buffering issues
+ENV PYTHONUNBUFFERED=1 \
+    PIP_NO_CACHE_DIR=1 \
+    PIP_DISABLE_PIP_VERSION_CHECK=1 \
+    DEBIAN_FRONTEND=noninteractive
+
+# Install system dependencies needed to build Python packages
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
     git \
     curl \
     wget \
-    build-essential \
     libssl-dev \
     libffi-dev \
+    python3-dev \
     libbz2-dev \
     liblzma-dev \
-    libsqlite3-dev \
     zlib1g-dev \
     && rm -rf /var/lib/apt/lists/*
 
-# -------------------------------
-# Python dependencies
-# -------------------------------
-COPY requirements.txt .
-RUN pip install --upgrade pip && \
-    pip install --no-cache-dir -r requirements.txt huggingface_hub gdown
+# Upgrade pip first
+RUN python -m pip install --upgrade pip
+
+# Copy your requirements file
+COPY requirements.txt /app/requirements.txt
+WORKDIR /app
+
+# Install Python dependencies
+RUN pip install --no-cache-dir -r requirements.txt \
 
 # -------------------------------
 # Copy entire project
@@ -47,16 +50,7 @@ RUN pip install --upgrade pip && \
 # - .github/ (harmless)
 # - etc.
 COPY . .
-#====== download models at buildtime ========
-#RUN python models/download_models.py #uncomment to download at build time
 
-# -------------------------------
-# Expose API port
-# -------------------------------
-EXPOSE 8000
+# Default command
+CMD ["python", "app.py"]
 
-# -------------------------------
-# Default command (ONLINE MODE)
-# -------------------------------
-# Can be overridden for CLI mode
-CMD ["uvicorn", "serve:app", "--host", "0.0.0.0", "--port", "8000"]
