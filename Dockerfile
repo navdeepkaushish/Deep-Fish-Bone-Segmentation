@@ -48,7 +48,7 @@ RUN pip install --upgrade pip && \
 # - etc.
 COPY . .
 #====== download models at buildtime ========
-RUN python models/download_models.py
+#RUN python models/download_models.py #uncomment to download at build time
 
 # -------------------------------
 # Expose API port
