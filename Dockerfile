@@ -1,8 +1,8 @@
 # -------------------------------
-# Base image with CUDA + PyTorch
+# Base image with Pytorch (cpu only)
 # -------------------------------
-FROM pytorch/pytorch:2.1.0-cuda11.8-cudnn8-runtime
-
+#FROM pytorch/pytorch:2.1.0-cuda11.8-cudnn8-runtime # uncomment this while using CUDA built
+FROM pytorch/pytorch:2.1.0-cpu
 # Prevent Python buffering issues
 ENV PYTHONUNBUFFERED=1
 
