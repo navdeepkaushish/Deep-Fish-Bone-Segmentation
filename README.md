@@ -16,10 +16,10 @@ Zebrafish images are processed through a multi-stage deep learning pipeline:
 - **Head Cropping**  
    - Bounding box extraction from full body mask
 - **Bone Structure Segmentation**  
-   - Multi-mask segmentation of internal developing bone structures from vertebra (lateral view) and head (ventral view)
+   - Multi-mask segmentation of internal developing bone structures from head (ventral view)
 
 ### Lateral View
-- Single segmentation model that predicts a **combined bone mask** from the lateral view
+- Single segmentation model that predicts developing **vertebral bone strcutres** from the vertebral column (lateral view)
 
 ---
 
