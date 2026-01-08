@@ -12,6 +12,7 @@ ENV PYTHONUNBUFFERED=1 \
     PIP_DISABLE_PIP_VERSION_CHECK=1 \
     DEBIAN_FRONTEND=noninteractive
 
+WORKDIR /app
 # Install system dependencies needed to build Python packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
@@ -31,10 +32,10 @@ RUN python -m pip install --upgrade pip
 
 # Copy your requirements file
 COPY requirements.txt /app/requirements.txt
-WORKDIR /app
+
 
 # Install Python dependencies
-RUN pip install --no-cache-dir -r requirements.txt \
+RUN pip install --no-cache-dir -r requirements.txt 
 
 # -------------------------------
 # Copy entire project
