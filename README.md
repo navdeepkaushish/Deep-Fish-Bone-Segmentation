@@ -190,7 +190,7 @@ GitHub Actions automatically:
 
 Workflow file:
 ```text
-.github/workflows/ci.yml
+.github/workflows/docker-image.yml
 ```
 ---
 
