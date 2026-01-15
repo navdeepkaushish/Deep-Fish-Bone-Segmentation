@@ -63,10 +63,10 @@ jobs:
         fi
 
     # -------------------------------------------------
-    # Build Docker image (on push only)
+    # Build Docker image (on push only) (uncomment this for CI integration )
     # -------------------------------------------------
-    - name: Build Docker image
-      if: github.event_name == 'push'
-      run: |
-        docker build -t $IMAGE_NAME:latest .
+    #- name: Build Docker image
+    #  if: github.event_name == 'push'
+     # run: |
+     #   docker build -t $IMAGE_NAME:latest .
 
