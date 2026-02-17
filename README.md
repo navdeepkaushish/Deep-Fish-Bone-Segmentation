@@ -55,7 +55,7 @@ Deep-Fish-Bone-Segmentation/
 ├── checkpoints/     # Downloaded at runtime or build time (for docker build)
 │   |-- v_full_seg.pt
 │   │-- v_bone_seg.pt
-│   |-- l_bone_seg
+│   |-- l_bone_seg.pt
 │     
 │
 ├── models/
